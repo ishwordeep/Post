@@ -23,13 +23,13 @@
                         <a class="nav-link" href="{{route('dashboard')}}">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Post</a>
+                        <a class="nav-link" href="{{route('posts')}}">Post</a>
                     </li>
 
 
                 </ul>
                 @auth
-                <button class="btn btn-outline-success" type="submit">User</button>
+                <button class="btn btn-outline-success" type="submit">{{auth()->user()->name}}</button>
                 <form action="{{route('logout')}}" method="post">
                     @csrf
                    <button class="btn btn-outline-success" type="submit">Logout</button>
