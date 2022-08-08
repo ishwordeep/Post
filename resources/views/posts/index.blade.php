@@ -26,6 +26,7 @@
                 <p class="card-text">{{$post->body}}</p>
             </div>
             <div class="p-2">{{$post->likes->count()}} {{Str::plural('Like',$post->likes->count())}}</div>
+            @auth
             <div class="d-flex flex-row mx-2">
                 @if(!$post->likedBy(auth()->user()))
                 <form action="{{route('likes.store',$post)}}" method="post">
@@ -43,6 +44,7 @@
 
 
             </div>
+            @endauth
         </div>
 
         @endforeach
